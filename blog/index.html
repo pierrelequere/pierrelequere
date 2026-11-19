@@ -2,15 +2,14 @@
 layout: default
 title: Blog
 ---
-<h1>Blog</h1>
-<p class="subtitle">Notes et retours d'expérience sur Microsoft 365, Teams, Exchange, Entra ID et PowerShell.</p>
+<header class="page-head">
+  <p class="eyebrow">Blog</p>
+  <h1>Notes de terrain.</h1>
+  <p class="lede">Retours d'expérience sur Microsoft 365, Teams, Exchange, Entra ID et PowerShell.</p>
+  <ul class="tags">
+    <li><a href="{{ '/blog/tags/' | relative_url }}">Tous les sujets</a></li>
+    {% for tag in site.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>{% endfor %}
+  </ul>
+</header>
 
-<ul class="posts big">
-  {% for post in site.posts %}
-  <li>
-    <span class="meta">{{ post.date | date: "%d/%m/%Y" }}</span>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-  </li>
-  {% endfor %}
-</ul>
+{% include post-list.html posts=site.posts limit=1000 %}

@@ -4,76 +4,38 @@ layout: default
 {% assign cv = site.data.cv %}
 
 <section class="hero">
-  <img class="avatar" src="{{ cv.photo | relative_url }}" alt="Photo de Pierre LE QUERE">
-  <div>
-    <h1>{{ cv.nom }} <span>{{ cv.prenom_nom }}</span></h1>
-    <p class="subtitle">{{ cv.titre }}</p>
-    <div class="prose">{{ cv.intro | markdownify }}</div>
-    <div class="links">
-      <a class="btn" href="mailto:{{ cv.email }}">Me contacter</a>
-      {% for l in cv.liens %}<a class="btn ghost" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.nom }}</a>{% endfor %}
-    </div>
+  <p class="eyebrow">{{ cv.nom }} · Ingénieur Systèmes chez Metsys</p>
+  <h1>Identités, messagerie et communications unifiées dans <em>Microsoft&nbsp;365</em>.</h1>
+  <p class="lede">{{ cv.accroche }}</p>
+  <div class="actions">
+    <a class="btn" href="mailto:{{ cv.email }}">Me contacter</a>
+    <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Voir mon parcours</a>
   </div>
 </section>
 
-<section id="experience">
-  <h2>Expérience</h2>
-  <ol class="timeline">
-    {% for e in cv.experiences %}
-    <li>
-      <div class="when">{{ e.dates }}</div>
-      <h3>{{ e.poste }} <small>· {{ e.entreprise }}</small></h3>
-      <div class="prose">{{ e.description | markdownify }}</div>
-    </li>
-    {% endfor %}
-  </ol>
-</section>
-
-<section id="formations">
-  <h2>Formations</h2>
-  <div class="grid">
-    {% for f in cv.formations %}
-    <div class="card">
-      <div class="when">{{ f.dates }}</div>
-      <h3>{{ f.diplome }}</h3>
-      <p>{{ f.ecole }}<br><small>{{ f.detail }}</small></p>
+<section>
+  <h2 class="section-title">Expertises</h2>
+  <div class="grid four">
+    {% for x in cv.expertises %}
+    <div class="tile">
+      <span class="num">0{{ forloop.index }}</span>
+      <h3>{{ x.titre }}</h3>
+      <p>{{ x.texte }}</p>
     </div>
     {% endfor %}
   </div>
 </section>
 
-<section id="certifications">
-  <h2>Certifications Microsoft</h2>
-  <div class="grid certs">
-    {% for c in cv.certifications %}
-    <div class="card cert">
-      <img src="{{ c.image | relative_url }}" alt="Badge {{ c.code }}" loading="lazy">
-      <strong>{{ c.code }}</strong>
-      <small>{{ c.nom }}</small>
-    </div>
-    {% endfor %}
+<section>
+  <div class="section-row">
+    <h2 class="section-title">Derniers articles</h2>
+    <a class="more" href="{{ '/blog/' | relative_url }}">Tout le blog →</a>
   </div>
-
-  <h3 class="mt">Compétences</h3>
-  <ul class="tags">
-    {% for s in cv.competences %}<li>{{ s }}</li>{% endfor %}
-  </ul>
+  {% include post-list.html posts=site.posts limit=3 %}
 </section>
 
-<section id="blog">
-  <h2>Derniers articles</h2>
-  <ul class="posts">
-    {% for post in site.posts limit: 3 %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="meta">{{ post.date | date: "%d/%m/%Y" }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-  <a href="{{ '/blog/' | relative_url }}">Voir tout le blog →</a>
-</section>
-
-<section id="loisirs">
-  <h2>Loisirs</h2>
-  <p>{{ cv.loisirs }}</p>
+<section class="cta">
+  <h2>Un projet de migration ou d'automatisation ?</h2>
+  <p>Écrivez-moi, je réponds rapidement.</p>
+  <a class="btn" href="mailto:{{ cv.email }}">{{ cv.email }}</a>
 </section>

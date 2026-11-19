@@ -1,7 +1,8 @@
 # Réglages du site — GitHub Pages compile tout automatiquement.
 title: Pierre LE QUERE
-description: Ingénieur Systèmes Identités, Messagerie et Communications unifiées
+description: Ingénieur Systèmes Microsoft 365 — migrations, Teams, Exchange, Entra ID et PowerShell.
 lang: fr
+author: Pierre LE QUERE
 
 # Le site est servi sur https://pierrelequere.github.io/pierrelequere
 # (si tu passes sur un domaine perso, mets baseurl: "")
@@ -10,9 +11,13 @@ baseurl: /pierrelequere
 
 permalink: /blog/:year/:month/:title/
 markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
   - README.md

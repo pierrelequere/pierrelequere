@@ -10,20 +10,29 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="{{ '/' | relative_url }}">Pierre <b>LE QUERE</b></a>
-    <nav>
-      <a href="{{ '/' | relative_url }}#experience">Parcours</a>
-      <a href="{{ '/' | relative_url }}#certifications">Certifications</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
-    </nav>
+    <div class="wrap">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="mark">PL</span> Pierre LE QUERE</a>
+      <nav>
+        <a href="{{ '/cv/' | relative_url }}"{% if page.url contains '/cv/' %} class="on"{% endif %}>Parcours</a>
+        <a href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} class="on"{% endif %}>Blog</a>
+        <a href="{{ '/a-propos/' | relative_url }}"{% if page.url contains '/a-propos/' %} class="on"{% endif %}>À propos</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
+  <main class="wrap">
     {{ content }}
   </main>
 
   <footer class="footer">
-    © {{ 'now' | date: "%Y" }} Pierre LE QUERE · <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    <div class="wrap">
+      <span>© {{ 'now' | date: "%Y" }} Pierre LE QUERE</span>
+      <span class="footer-links">
+        <a href="mailto:{{ site.data.cv.email }}">Email</a>
+        {% for l in site.data.cv.liens %}<a href="{{ l.url }}" rel="noopener">{{ l.nom }}</a>{% endfor %}
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      </span>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,10 +1,7 @@
 # Site de Pierre LE QUERE
 
-CV + blog, en Markdown, publié automatiquement par **GitHub Pages** (Jekyll). Aucun outil à installer.
-
-## Modifier le CV
-Tout est dans **`_data/cv.yml`** : expériences, formations, certifications, compétences, liens.
-Ajoute ou supprime un bloc, pousse sur GitHub, c'est en ligne.
+Site personnel + blog, écrit en Markdown et publié automatiquement par **GitHub Pages** (Jekyll).
+Rien à installer : on modifie un fichier, on pousse, c'est en ligne.
 
 ## Écrire un article
 Crée un fichier dans **`_posts/`** nommé `AAAA-MM-JJ-mon-titre.md` :
@@ -12,24 +9,40 @@ Crée un fichier dans **`_posts/`** nommé `AAAA-MM-JJ-mon-titre.md` :
 ```markdown
 ---
 title: Mon titre
-tags: [powershell]
+description: Une phrase de résumé (affichée dans la liste).
+tags: [PowerShell, Teams]
 ---
 
-Le texte en **Markdown**…
+Le texte en **Markdown**, avec du code :
+
+    ```powershell
+    Get-Mailbox
+    ```
 ```
 
-## Changer le style
-Couleurs en haut de **`assets/css/style.css`** (thème clair/sombre automatique).
+Les tags créent automatiquement les pages de sujets ; le temps de lecture,
+les liens précédent/suivant et le flux RSS sont générés tout seuls.
+
+## Modifier le contenu
+| Quoi | Fichier |
+|---|---|
+| Accroche, expertises, expériences, certifications, compétences, liens | `_data/cv.yml` |
+| Page « À propos » | `a-propos/index.md` |
+| Couleurs et typographie | `assets/css/style.css` (en haut du fichier) |
+| Titre du site, URL | `_config.yml` |
 
 ## Structure
 ```
-_config.yml        réglages (titre, URL)
-_data/cv.yml       contenu du CV
-_posts/            articles du blog
-_layouts/          gabarits HTML (rarement à toucher)
-index.html         page CV
-blog/index.html    liste des articles
-assets/            CSS et images
+_config.yml          réglages
+_data/cv.yml         contenu du site
+_posts/              articles du blog
+_layouts/ _includes/ gabarits (rarement à toucher)
+index.html           accueil
+cv/                  parcours
+blog/                liste des articles + sujets
+a-propos/            page À propos
+404.html             page d'erreur
+assets/              CSS et badges
 ```
 
 ## Mise en ligne

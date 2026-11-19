@@ -1,0 +1,11 @@
+<ul class="post-list">
+  {% for post in include.posts limit: include.limit %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+      <span class="t">{{ post.title }}</span>
+      <span class="d">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,63 @@
+---
+layout: default
+title: Parcours
+---
+{% assign cv = site.data.cv %}
+
+<header class="page-head">
+  <p class="eyebrow">Parcours</p>
+  <h1>Dix ans dans l'écosystème Microsoft.</h1>
+  <p class="lede">{{ cv.titre }}</p>
+</header>
+
+<section>
+  <h2 class="section-title">Expérience</h2>
+  <ol class="rows">
+    {% for e in cv.experiences %}
+    <li>
+      <time>{{ e.dates }}</time>
+      <div>
+        <h3>{{ e.poste }}</h3>
+        <p class="where">{{ e.entreprise }}</p>
+        <div class="prose">{{ e.description | markdownify }}</div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section>
+  <h2 class="section-title">Certifications Microsoft</h2>
+  <div class="grid four">
+    {% for c in cv.certifications %}
+    <div class="tile cert">
+      <img src="{{ c.image | relative_url }}" alt="Badge {{ c.code }}" loading="lazy">
+      <h3>{{ c.code }}</h3>
+      <p>{{ c.nom }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Formation</h2>
+  <ol class="rows">
+    {% for f in cv.formations %}
+    <li>
+      <time>{{ f.dates }}</time>
+      <div>
+        <h3>{{ f.diplome }}</h3>
+        <p class="where">{{ f.ecole }}</p>
+        <p>{{ f.detail }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section>
+  <h2 class="section-title">Compétences</h2>
+  <ul class="tags big">
+    {% for s in cv.competences %}<li>{{ s }}</li>{% endfor %}
+  </ul>
+</section>
