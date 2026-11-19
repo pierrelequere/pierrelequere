@@ -4,8 +4,8 @@
 # ─────────────────────────────────────────────
 
 nom: Pierre LE QUERE
-titre: Ingénieur DevOps — Microsoft 365, CI/CD et infrastructure as code
-poste_actuel: Ingénieur DevOps chez Bleu
+titre: Ingénieur Opérations Microsoft 365 — CI/CD, infrastructure as code et automatisation
+poste_actuel: Ingénieur Opérations M365 chez Bleu
 presentation: >
   Je travaille chez Bleu depuis mai 2025, où je construis et fais tourner des
   environnements Microsoft 365 : pipelines CI/CD, Terraform et beaucoup de PowerShell.
@@ -36,7 +36,7 @@ quotidien:
     texte: Le fil rouge depuis dix ans, de l'administration aux migrations.
 
 experiences:
-  - poste: Ingénieur DevOps
+  - poste: Ingénieur Opérations Microsoft 365
     entreprise: Bleu
     dates: Mai 2025 — aujourd'hui
     description: |
