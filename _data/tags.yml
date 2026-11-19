@@ -1,0 +1,11 @@
+# Icône associée à chaque tag du blog (fichiers dans assets/icons/).
+# Le premier tag d'un article donne son icône. Tag inconnu → note.svg
+# Tu peux remplacer un fichier .svg par le logo officiel si tu le souhaites.
+PowerShell: powershell.svg
+Terraform: terraform.svg
+Azure DevOps: azure-devops.svg
+CI/CD: azure-devops.svg
+Exchange: exchange.svg
+Teams: teams.svg
+Microsoft 365: m365.svg
+Entra ID: m365.svg

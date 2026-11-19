@@ -5,10 +5,10 @@ title: Blog
 <header class="page-head">
   <p class="eyebrow">Blog</p>
   <h1>Notes de terrain.</h1>
-  <p class="lede">Retours d'expérience sur Microsoft 365, Teams, Exchange, Entra ID et PowerShell.</p>
+  <p class="lede">Mon carnet de notes : PowerShell, Terraform, Azure DevOps et Microsoft 365.</p>
   <ul class="tags">
     <li><a href="{{ '/blog/tags/' | relative_url }}">Tous les sujets</a></li>
-    {% for tag in site.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>{% endfor %}
+    {% for tag in site.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ tag[0] | slugify }}">{% assign tname = tag[0] %}{% include icon.html tag=tname size="xs" %}{{ tag[0] }}</a></li>{% endfor %}
   </ul>
 </header>
 

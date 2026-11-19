@@ -4,8 +4,14 @@
 # ─────────────────────────────────────────────
 
 nom: Pierre LE QUERE
-titre: Ingénieur Systèmes — Identités, Messagerie & Communications unifiées
-accroche: J'aide les entreprises à migrer, sécuriser et automatiser leur environnement Microsoft 365.
+titre: Ingénieur DevOps — Microsoft 365, CI/CD et infrastructure as code
+poste_actuel: Ingénieur DevOps chez Bleu
+presentation: >
+  Je travaille chez Bleu depuis mai 2025, où je construis et fais tourner des
+  environnements Microsoft 365 : pipelines CI/CD, Terraform et beaucoup de PowerShell.
+  Avant ça, j'ai passé plusieurs années à migrer et administrer des environnements Microsoft.
+  Ici, je partage ce que j'apprends en chemin.
+hors_clavier: Guitare et chant (plutôt blues et rock'n'roll), course à pied, football entre amis et pêche.
 email: pierrelequere2@gmail.com
 
 liens:
@@ -14,20 +20,33 @@ liens:
   - nom: GitHub
     url: https://github.com/platinarock
 
-expertises:
-  - titre: Migrations Microsoft 365
-    texte: Tenant à tenant, Google Workspace et Exchange On-Premise vers Exchange Online, avec Quest et BitTitan.
-  - titre: Teams & Teams Voice
-    texte: Déploiement, gouvernance et téléphonie Teams, du routage direct aux forfaits d'appels.
-  - titre: Identités
-    texte: Active Directory et Entra ID — synchronisation, accès conditionnel, gestion des accès.
-  - titre: Automatisation PowerShell
-    texte: Scripts d'administration et de migration pour fiabiliser et accélérer les opérations.
+# Ce que je fais au quotidien (le champ "tag" choisit l'icône, voir _data/tags.yml)
+quotidien:
+  - titre: CI/CD & Azure DevOps
+    tag: Azure DevOps
+    texte: Pipelines, dépôts et tableaux agiles pour livrer souvent et sans surprise.
+  - titre: Infrastructure as code
+    tag: Terraform
+    texte: Terraform pour décrire les environnements et pouvoir les reconstruire à l'identique.
+  - titre: Opérations Microsoft 365
+    tag: Microsoft 365
+    texte: Construction et exploitation d'environnements Exchange, Teams et Entra ID.
+  - titre: PowerShell
+    tag: PowerShell
+    texte: Le fil rouge depuis dix ans, de l'administration aux migrations.
 
 experiences:
+  - poste: Ingénieur DevOps
+    entreprise: Bleu
+    dates: Mai 2025 — aujourd'hui
+    description: |
+      Opérations Microsoft 365 et construction d'environnements. Chaînes CI/CD sur
+      **Azure DevOps**, infrastructure as code avec **Terraform**, scripting **PowerShell**,
+      dans une organisation agile.
+
   - poste: Ingénieur Migration 365
     entreprise: Metsys
-    dates: 2023 — aujourd'hui
+    dates: 2023 — 2025
     description: |
       Migration des portefeuilles clients vers Microsoft 365 avec **Quest** et **BitTitan**,
       pour une transition fluide et sans interruption : 365 → 365, Google → 365,
@@ -36,14 +55,14 @@ experiences:
 
   - poste: Lead Consultant
     entreprise: Metsys
-    dates: 2022 — aujourd'hui
+    dates: 2022 — 2025
     description: |
       Responsable d'une équipe de cinq personnes : montée en compétences sur les technologies
       Microsoft via des ateliers, des workshops et la production de cours internes.
 
   - poste: Consultant
     entreprise: Metsys
-    dates: 2021 — aujourd'hui
+    dates: 2021 — 2025
     description: |
       Interventions chez les clients sur Teams, Exchange et Entra ID. L'automatisation au cœur
       du métier : des solutions sur mesure pour optimiser l'infrastructure et les processus.
@@ -92,6 +111,10 @@ certifications:
 
 competences:
   - PowerShell
+  - Terraform
+  - Azure DevOps
+  - CI/CD
+  - Agilité / Scrum
   - Teams & Teams Voice
   - Entra ID
   - Active Directory

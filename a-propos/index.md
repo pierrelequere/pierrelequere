@@ -2,24 +2,28 @@
 layout: page
 title: À propos
 eyebrow: À propos
-intro: Ingénieur système Microsoft, passionné d'automatisation — et de rock'n'roll.
+intro: Ingénieur DevOps, PowerShell au quotidien — et guitare le soir.
 ---
 
-Je suis ingénieur système chez **Metsys**, spécialisé dans les technologies Microsoft :
-Teams et Teams Voice, Exchange, Active Directory et Entra ID. Depuis 2016, j'ai été
-technicien support, administrateur système puis consultant, et aujourd'hui je mène des
-projets de migration vers Microsoft 365 tout en accompagnant une équipe de cinq consultants.
+Je suis ingénieur DevOps chez **Bleu** depuis mai 2025. Mon travail tourne autour des
+opérations Microsoft 365 et de la construction d'environnements : pipelines CI/CD sur
+Azure DevOps, infrastructure as code avec Terraform, scripts PowerShell, le tout dans
+une organisation agile.
 
-Ce qui me motive : rendre les infrastructures plus simples, plus fiables et plus
-automatisées. PowerShell est mon outil de tous les jours.
+J'ai commencé en 2016 comme technicien support, puis j'ai été administrateur système
+et consultant chez Metsys. Là-bas, j'ai mené des migrations vers Microsoft 365 et
+accompagné une équipe de cinq consultants. Le passage au DevOps a été une suite
+logique : j'automatisais déjà beaucoup, autant le faire de bout en bout.
+
+Ce blog me sert de carnet de notes. J'y garde les scripts et les astuces que j'aurais
+aimé trouver plus tôt.
 
 ## En dehors du travail
 
-Musicien depuis l'âge de 8 ans, je joue de la guitare et je chante — rock'n'roll et blues
-surtout. Je cours, je joue au football avec des amis et j'aime partir pêcher pour
-profiter de la nature.
+Musicien depuis l'âge de 8 ans, je joue de la guitare et je chante, surtout du blues
+et du rock'n'roll. Je cours, je joue au football avec des amis et j'aime partir pêcher.
 
 ## Me contacter
 
-Le plus simple est de m'écrire à [pierrelequere2@gmail.com](mailto:pierrelequere2@gmail.com),
-ou de me retrouver sur [LinkedIn](https://www.linkedin.com/in/pierre-le-quere-4511a3161/).
+Par mail à [pierrelequere2@gmail.com](mailto:pierrelequere2@gmail.com),
+ou sur [LinkedIn](https://www.linkedin.com/in/pierre-le-quere-4511a3161/).

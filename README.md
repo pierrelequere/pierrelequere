@@ -20,7 +20,7 @@ Le texte en **Markdown**, avec du code :
     ```
 ```
 
-Les tags créent automatiquement les pages de sujets ; le temps de lecture,
+Le premier tag choisit l'icône de l'article (voir `_data/tags.yml`). Les tags créent automatiquement les pages de sujets ; le temps de lecture,
 les liens précédent/suivant et le flux RSS sont générés tout seuls.
 
 ## Modifier le contenu
@@ -28,6 +28,7 @@ les liens précédent/suivant et le flux RSS sont générés tout seuls.
 |---|---|
 | Accroche, expertises, expériences, certifications, compétences, liens | `_data/cv.yml` |
 | Page « À propos » | `a-propos/index.md` |
+| Icône de chaque sujet du blog | `_data/tags.yml` + `assets/icons/` |
 | Couleurs et typographie | `assets/css/style.css` (en haut du fichier) |
 | Titre du site, URL | `_config.yml` |
 

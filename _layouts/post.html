@@ -4,6 +4,7 @@ layout: default
 {% assign words = content | number_of_words %}
 <article class="post">
   <header class="page-head">
+    {% assign first_tag = page.tags | first %}{% include icon.html tag=first_tag size="lg" %}
     <p class="eyebrow">
       <a href="{{ '/blog/' | relative_url }}">Blog</a> ·
       {{ page.date | date: "%d/%m/%Y" }} ·

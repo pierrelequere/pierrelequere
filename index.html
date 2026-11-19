@@ -4,21 +4,21 @@ layout: default
 {% assign cv = site.data.cv %}
 
 <section class="hero">
-  <p class="eyebrow">{{ cv.nom }} · Ingénieur Systèmes chez Metsys</p>
-  <h1>Identités, messagerie et communications unifiées dans <em>Microsoft&nbsp;365</em>.</h1>
-  <p class="lede">{{ cv.accroche }}</p>
+  <p class="eyebrow">{{ cv.poste_actuel }}</p>
+  <h1>Bonjour, je suis <em>Pierre</em>.</h1>
+  <p class="lede">{{ cv.presentation }}</p>
   <div class="actions">
-    <a class="btn" href="mailto:{{ cv.email }}">Me contacter</a>
-    <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Voir mon parcours</a>
+    <a class="btn" href="{{ '/blog/' | relative_url }}">Lire le blog</a>
+    <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Mon parcours</a>
   </div>
 </section>
 
 <section>
-  <h2 class="section-title">Expertises</h2>
+  <h2 class="section-title">Au quotidien</h2>
   <div class="grid four">
-    {% for x in cv.expertises %}
+    {% for x in cv.quotidien %}
     <div class="tile">
-      <span class="num">0{{ forloop.index }}</span>
+      {% include icon.html tag=x.tag %}
       <h3>{{ x.titre }}</h3>
       <p>{{ x.texte }}</p>
     </div>
@@ -34,8 +34,7 @@ layout: default
   {% include post-list.html posts=site.posts limit=3 %}
 </section>
 
-<section class="cta">
-  <h2>Un projet de migration ou d'automatisation ?</h2>
-  <p>Écrivez-moi, je réponds rapidement.</p>
-  <a class="btn" href="mailto:{{ cv.email }}">{{ cv.email }}</a>
+<section class="aside">
+  <h2 class="section-title">En dehors du clavier</h2>
+  <p>{{ cv.hors_clavier }}</p>
 </section>

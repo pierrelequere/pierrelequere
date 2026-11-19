@@ -10,7 +10,7 @@ permalink: /blog/tags/
 
 {% for tag in site.tags %}
 <section id="{{ tag[0] | slugify }}">
-  <h2 class="section-title">{{ tag[0] }}</h2>
+  <h2 class="section-title tag-title">{% assign tname = tag[0] %}{% include icon.html tag=tname size="xs" %}{{ tag[0] }}</h2>
   {% assign tposts = tag[1] %}
   {% include post-list.html posts=tposts limit=1000 %}
 </section>

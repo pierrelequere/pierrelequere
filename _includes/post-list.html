@@ -1,10 +1,14 @@
 <ul class="post-list">
   {% for post in include.posts limit: include.limit %}
+  {% assign first_tag = post.tags | first %}
   <li>
     <a href="{{ post.url | relative_url }}">
       <time>{{ post.date | date: "%d/%m/%Y" }}</time>
-      <span class="t">{{ post.title }}</span>
-      <span class="d">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</span>
+      {% include icon.html tag=first_tag %}
+      <span class="body">
+        <span class="t">{{ post.title }}</span>
+        <span class="d">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</span>
+      </span>
     </a>
   </li>
   {% endfor %}
