@@ -7,8 +7,23 @@
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: light dark;
 }
+/* Sombre : selon l'appareil, ou forcé par le bouton de l'en-tête */
+:root[data-theme="dark"] { --bg: #0e0e10; --text: #ececee; --muted: #8e8e96; --line: #26262b; --soft: #18181c; --accent: #8ea6ff; color-scheme: dark; }
+:root[data-theme="light"] { color-scheme: light; }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0e0e10; --text: #ececee; --muted: #8e8e96; --line: #26262b; --soft: #18181c; --accent: #8ea6ff; }
+  :root:not([data-theme="light"]) { --bg: #0e0e10; --text: #ececee; --muted: #8e8e96; --line: #26262b; --soft: #18181c; --accent: #8ea6ff; }
+}
+body { transition: background-color .25s, color .25s; }
+
+.theme { display: grid; place-items: center; width: 34px; height: 34px; margin-left: -.5rem; padding: 0; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; }
+.theme:hover { color: var(--text); border-color: var(--text); }
+.theme svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.theme .sun { display: none; }
+:root[data-theme="dark"] .theme .sun { display: block; }
+:root[data-theme="dark"] .theme .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme .sun { display: block; }
+  :root:not([data-theme="light"]) .theme .moon { display: none; }
 }
 
 * { box-sizing: border-box; }
@@ -27,7 +42,7 @@ main { padding-bottom: 4rem; }
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .brand { display: flex; align-items: center; gap: .65rem; font-weight: 600; text-decoration: none; }
 .mark { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--text); color: var(--bg); font-size: .75rem; letter-spacing: .02em; }
-.topbar nav { display: flex; gap: 1.75rem; font-size: .95rem; }
+.topbar nav { display: flex; align-items: center; gap: 1.75rem; font-size: .95rem; }
 .topbar nav a { color: var(--muted); text-decoration: none; }
 .topbar nav a:hover, .topbar nav a.on { color: var(--text); }
 
