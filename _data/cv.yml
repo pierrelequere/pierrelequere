@@ -1,0 +1,108 @@
+# ─────────────────────────────────────────────
+#  Tout le contenu du CV est ici.
+#  Les champs "description" acceptent le Markdown.
+# ─────────────────────────────────────────────
+
+nom: Pierre
+prenom_nom: LE QUERE
+titre: Ingénieur Systèmes Identités, Messagerie et Communications unifiées
+photo: /assets/img/pierre.jpg
+email: pierrelequere2@gmail.com
+intro: >
+  Ingénieur système Microsoft chez **Metsys**, spécialisé dans Teams Voice, Teams,
+  Exchange et Entra ID (Azure AD), avec une expertise avancée en **PowerShell**.
+
+liens:
+  - nom: LinkedIn
+    url: https://www.linkedin.com/in/pierre-le-quere-4511a3161/
+  - nom: GitHub
+    url: https://github.com/platinarock
+
+experiences:
+  - poste: Ingénieur Migration 365
+    entreprise: Metsys
+    dates: Octobre 2023 — Aujourd'hui
+    description: |
+      Migration des portefeuilles clients vers Microsoft 365 avec **Quest** et **BitTitan**,
+      pour une transition fluide et sans interruption.
+
+      - Migration 365 → 365
+      - Migration Google → 365
+      - Migration Exchange → Exchange Online
+
+      Services migrés : Active Directory, Entra ID, Exchange, SharePoint, Teams.
+      Automatisation des processus avec PowerShell.
+
+  - poste: Lead Consultant
+    entreprise: Metsys
+    dates: Juillet 2022 — Aujourd'hui
+    description: |
+      Responsable d'une équipe de cinq personnes : montée en compétences sur les
+      technologies Microsoft via des ateliers, des workshops et la production de cours internes.
+
+  - poste: Consultant
+    entreprise: Metsys
+    dates: Octobre 2021 — Aujourd'hui
+    description: |
+      Interventions chez les clients sur Teams, Exchange et Entra ID. L'automatisation est au
+      cœur du métier : des solutions sur mesure pour optimiser l'infrastructure et les processus.
+
+  - poste: Administrateur / Ingénieur Système
+    entreprise: Capeos
+    dates: Octobre 2018 — Octobre 2021
+    description: |
+      Administration du SI d'une entreprise de 250 personnes : serveurs Linux et Windows,
+      virtualisation, réseau et sécurité, masters de postes de travail.
+      Migration de l'entreprise vers Office 365.
+
+  - poste: Technicien de Support N2
+    entreprise: Proservia — Groupe Rocher
+    dates: Octobre 2016 — Octobre 2018
+    description: |
+      Support Exchange, Active Directory et Office 365 : diagnostic des pannes et
+      résolution rapide pour limiter l'impact sur les utilisateurs.
+
+formations:
+  - ecole: Université Sciences-U Lille
+    diplome: Master Expert Ingénierie Informatique
+    detail: Cloud Microsoft 365, environnements On-Premise, virtualisation
+    dates: 2020 — 2021
+  - ecole: Campus ENI
+    diplome: Titre ASR (Bac +4)
+    detail: Projet de migration de messagerie vers Exchange Online
+    dates: 2018 — 2020
+  - ecole: Campus ENI
+    diplome: Titre TSSR (Bac +2)
+    detail: Support systèmes et réseaux
+    dates: 2016 — 2018
+
+certifications:
+  - code: AZ-900
+    nom: Azure Fundamentals
+    image: /assets/img/az-900.png
+  - code: MS-700
+    nom: Teams Administrator
+    image: /assets/img/MS-700.png
+  - code: MS-720
+    nom: Teams Voice Engineer
+    image: /assets/img/MS-720.png
+  - code: SC-300
+    nom: Identity & Access
+    image: /assets/img/SC-300.png
+
+competences:
+  - PowerShell
+  - Teams & Teams Voice
+  - Entra ID & Active Directory
+  - Exchange Online & On-Premise
+  - Windows Server
+  - VMware ESXi
+  - IIS & Apache
+  - Linux & Docker
+  - Gestion de projet
+  - HTML / CSS / JS
+  - Git
+
+loisirs: >
+  Musicien depuis l'âge de 8 ans — guitare et chant, rock'n'roll et blues.
+  Course à pied, football entre amis, et pêche pour profiter de la nature.

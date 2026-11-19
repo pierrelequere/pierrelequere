@@ -1,0 +1,18 @@
+# Réglages du site — GitHub Pages compile tout automatiquement.
+title: Pierre LE QUERE
+description: Ingénieur Systèmes Identités, Messagerie et Communications unifiées
+lang: fr
+
+# Le site est servi sur https://pierrelequere.github.io/pierrelequere
+# (si tu passes sur un domaine perso, mets baseurl: "")
+url: https://pierrelequere.github.io
+baseurl: /pierrelequere
+
+permalink: /blog/:year/:month/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md

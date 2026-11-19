@@ -1,0 +1,16 @@
+---
+layout: default
+title: Blog
+---
+<h1>Blog</h1>
+<p class="subtitle">Notes et retours d'expérience sur Microsoft 365, Teams, Exchange, Entra ID et PowerShell.</p>
+
+<ul class="posts big">
+  {% for post in site.posts %}
+  <li>
+    <span class="meta">{{ post.date | date: "%d/%m/%Y" }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+  </li>
+  {% endfor %}
+</ul>
