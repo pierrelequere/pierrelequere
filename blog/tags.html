@@ -1,17 +1,18 @@
 ---
 layout: default
 title: Sujets
+feuille: Blog
 permalink: /blog/tags/
 ---
-<header class="page-head">
-  <p class="eyebrow"><a href="{{ '/blog/' | relative_url }}">Blog</a></p>
+<header class="tete">
+  <p class="meta"><a href="{{ '/blog/' | relative_url }}">Blog</a></p>
   <h1>Sujets</h1>
 </header>
 
 {% for tag in site.tags %}
-<section id="{{ tag[0] | slugify }}">
-  <h2 class="section-title tag-title">{% assign tname = tag[0] %}{% include icon.html tag=tname size="xs" %}{{ tag[0] }}</h2>
-  {% assign tposts = tag[1] %}
+{% assign tname = tag[0] %}{% assign tposts = tag[1] %}
+<section class="bloc" id="{{ tname | slugify }}">
+  <h2 class="avec-icone">{% include icon.html tag=tname size="sm" %}{{ tname }}</h2>
   {% include post-list.html posts=tposts limit=1000 %}
 </section>
 {% endfor %}

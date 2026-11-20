@@ -46,5 +46,18 @@ a-propos/            page À propos
 assets/              CSS et badges
 ```
 
+## Commentaires
+Les commentaires des articles utilisent **utterances** : chaque discussion est une issue GitHub de ce dépôt
+(libellé `commentaire`). Il faut installer l'application une fois : https://github.com/apps/utterances
+(choisir uniquement ce dépôt). Pour les désactiver, supprimer `comments_repo` dans `_config.yml`.
+
+## CV en PDF
+Sur la page Parcours, le bouton « Télécharger en PDF » ouvre l'impression du navigateur :
+une mise en page dédiée (fond blanc, 2 pages A4) est prévue.
+
+## Photo
+`assets/img/portrait-cyanotype.jpg` (500 × 600). Pour en changer, remplace ce fichier
+par une photo du même format.
+
 ## Mise en ligne
 Settings → Pages → Source : *Deploy from a branch* → `main` / `(root)`.

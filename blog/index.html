@@ -1,14 +1,13 @@
 ---
 layout: default
 title: Blog
+feuille: Blog
 ---
-<header class="page-head">
-  <p class="eyebrow">Blog</p>
-  <h1>Notes de terrain.</h1>
-  <p class="lede">Mon carnet de notes : PowerShell, Terraform, Azure DevOps et Microsoft 365.</p>
-  <ul class="tags">
-    <li><a href="{{ '/blog/tags/' | relative_url }}">Tous les sujets</a></li>
-    {% for tag in site.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ tag[0] | slugify }}">{% assign tname = tag[0] %}{% include icon.html tag=tname size="xs" %}{{ tag[0] }}</a></li>{% endfor %}
+<header class="tete">
+  <h1>Notes de terrain</h1>
+  <p class="intro">Mon carnet : PowerShell, Terraform, Azure DevOps et Microsoft 365. Les scripts et astuces que j'aurais aimé trouver plus tôt.</p>
+  <ul class="etiquettes">
+    {% for tag in site.tags %}{% assign tname = tag[0] %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ tname | slugify }}">{% include icon.html tag=tname size="xs" %}{{ tname }}</a></li>{% endfor %}
   </ul>
 </header>
 

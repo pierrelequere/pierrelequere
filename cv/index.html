@@ -1,24 +1,32 @@
 ---
 layout: default
 title: Parcours
+feuille: Parcours
 ---
 {% assign cv = site.data.cv %}
 
-<header class="page-head">
-  <p class="eyebrow">Parcours</p>
-  <h1>Dix ans dans l'écosystème Microsoft.</h1>
-  <p class="lede">{{ cv.titre }}</p>
+<header class="tete cv-tete">
+  <div>
+    <h1>Parcours</h1>
+    <p class="intro">{{ cv.titre }}. Dix ans dans l'écosystème Microsoft, du support à l'exploitation de Microsoft 365.</p>
+    <div class="actions no-print">
+      <button class="btn" type="button" onclick="window.print()">Télécharger en PDF</button>
+      <a class="btn ghost" href="mailto:{{ cv.email }}">M'écrire</a>
+    </div>
+    <p class="print-only contact-print">{{ cv.email }} · linkedin.com/in/pierre-le-quere-4511a3161</p>
+  </div>
+  <img class="vignette" src="{{ cv.photo | relative_url }}" alt="" width="500" height="600">
 </header>
 
-<section>
-  <h2 class="section-title">Expérience</h2>
-  <ol class="rows">
+<section class="bloc">
+  <h2>Expérience</h2>
+  <ol class="frise">
     {% for e in cv.experiences %}
-    <li>
-      <time>{{ e.dates }}</time>
-      <div>
+    <li{% if forloop.first %} class="actuel"{% endif %}>
+      <p class="quand">{{ e.dates }}</p>
+      <div class="quoi">
         <h3>{{ e.poste }}</h3>
-        <p class="where">{{ e.entreprise }}</p>
+        <p class="ou">{{ e.entreprise }}</p>
         <div class="prose">{{ e.description | markdownify }}</div>
       </div>
     </li>
@@ -26,38 +34,43 @@ title: Parcours
   </ol>
 </section>
 
-<section>
-  <h2 class="section-title">Certifications Microsoft</h2>
-  <div class="grid four">
-    {% for c in cv.certifications %}
-    <div class="tile cert">
-      <img src="{{ c.image | relative_url }}" alt="Badge {{ c.code }}" loading="lazy">
-      <h3>{{ c.code }}</h3>
-      <p>{{ c.nom }}</p>
+<section class="bloc">
+  <h2>Compétences</h2>
+  <dl class="competences">
+    {% for g in cv.competences %}
+    <div>
+      <dt>{{ g.groupe }}</dt>
+      <dd><ul>{% for s in g.items %}<li>{{ s }}</li>{% endfor %}</ul></dd>
     </div>
     {% endfor %}
-  </div>
+  </dl>
 </section>
 
-<section>
-  <h2 class="section-title">Formation</h2>
-  <ol class="rows">
+<section class="bloc">
+  <h2>Certifications Microsoft</h2>
+  <ul class="badges">
+    {% for c in cv.certifications %}
+    <li>
+      <img src="{{ c.image | relative_url }}" alt="" width="96" height="96" loading="lazy">
+      <strong>{{ c.code }}</strong>
+      <span>{{ c.nom }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="bloc">
+  <h2>Formation</h2>
+  <ol class="frise compacte">
     {% for f in cv.formations %}
     <li>
-      <time>{{ f.dates }}</time>
-      <div>
+      <p class="quand">{{ f.dates }}</p>
+      <div class="quoi">
         <h3>{{ f.diplome }}</h3>
-        <p class="where">{{ f.ecole }}</p>
+        <p class="ou">{{ f.ecole }}</p>
         <p>{{ f.detail }}</p>
       </div>
     </li>
     {% endfor %}
   </ol>
-</section>
-
-<section>
-  <h2 class="section-title">Compétences</h2>
-  <ul class="tags big">
-    {% for s in cv.competences %}<li>{{ s }}</li>{% endfor %}
-  </ul>
 </section>

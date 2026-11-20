@@ -2,29 +2,51 @@
 layout: default
 ---
 {% assign words = content | number_of_words %}
-<article class="post">
-  <header class="page-head">
-    {% assign first_tag = page.tags | first %}{% include icon.html tag=first_tag size="lg" %}
-    <p class="eyebrow">
-      <a href="{{ '/blog/' | relative_url }}">Blog</a> ·
-      {{ page.date | date: "%d/%m/%Y" }} ·
-      {{ words | divided_by: 200 | plus: 1 }} min de lecture
+<article class="article">
+  <header class="tete">
+    <p class="meta">
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+      <span>{{ words | divided_by: 200 | plus: 1 }} min de lecture</span>
     </p>
     <h1>{{ page.title }}</h1>
-    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+    {% if page.description %}<p class="intro">{{ page.description }}</p>{% endif %}
     {% if page.tags.size > 0 %}
-    <ul class="tags">
-      {% for t in page.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a></li>{% endfor %}
+    <ul class="etiquettes">
+      {% for t in page.tags %}<li><a href="{{ '/blog/tags/' | relative_url }}#{{ t | slugify }}">{% include icon.html tag=t size="xs" %}{{ t }}</a></li>{% endfor %}
     </ul>
     {% endif %}
   </header>
 
-  <div class="prose narrow">
+  <div class="prose">
     {{ content }}
   </div>
 
-  <nav class="pager narrow">
-    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>← Précédent</small>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
-    {% if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><small>Suivant →</small>{{ page.next.title }}</a>{% endif %}
+  <nav class="suite" aria-label="Autres articles">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><small>Article précédent</small>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="suivant" href="{{ page.next.url | relative_url }}"><small>Article suivant</small>{{ page.next.title }}</a>{% endif %}
   </nav>
+
+  {% if site.comments_repo %}
+  <section class="commentaires" aria-labelledby="titre-commentaires">
+    <h2 id="titre-commentaires">Commentaires</h2>
+    <p class="note">Les commentaires passent par GitHub : connectez-vous avec votre compte pour en laisser un.</p>
+    <div id="utterances"></div>
+    <script>
+      (function () {
+        var s = document.createElement('script');
+        s.src = 'https://utteranc.es/client.js';
+        s.async = true;
+        s.crossOrigin = 'anonymous';
+        s.setAttribute('repo', '{{ site.comments_repo }}');
+        s.setAttribute('issue-term', 'pathname');
+        s.setAttribute('label', 'commentaire');
+        var r = document.documentElement;
+        var dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        s.setAttribute('theme', dark ? 'dark-blue' : 'github-light');
+        document.getElementById('utterances').appendChild(s);
+      })();
+    </script>
+  </section>
+  {% endif %}
 </article>

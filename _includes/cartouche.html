@@ -1,0 +1,26 @@
+{% assign cv = site.data.cv %}
+<footer class="cartouche-zone">
+  <div class="wrap">
+    <table class="cartouche">
+      <caption class="sr-only">Cartouche du site</caption>
+      <tr>
+        <th scope="row">Projet</th>
+        <td colspan="3" class="cartouche-titre">Pierre Le Quere</td>
+      </tr>
+      <tr>
+        <th scope="row">Feuille</th>
+        <td>{{ page.feuille | default: "Blog" }}</td>
+        <th scope="row">Révision</th>
+        <td>{{ site.time | date: "%d/%m/%Y" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Contact</th>
+        <td colspan="3" class="cartouche-liens">
+          <a href="mailto:{{ cv.email }}">Email</a>
+          {% for l in cv.liens %}<a href="{{ l.url }}" rel="noopener">{{ l.nom }}</a>{% endfor %}
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</footer>

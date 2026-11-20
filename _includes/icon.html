@@ -1,1 +1,1 @@
-{% assign ic = site.data.tags[include.tag] | default: 'note.svg' %}<img class="ico{% if include.size %} {{ include.size }}{% endif %}" src="{{ '/assets/icons/' | append: ic | relative_url }}" alt="" width="40" height="40">
+{% assign ic = site.data.tags[include.tag] | default: 'note.svg' %}<span class="ico{% if include.size %} {{ include.size }}{% endif %}" style="--icon: url('{{ '/assets/icons/' | append: ic | relative_url }}')" aria-hidden="true"></span>

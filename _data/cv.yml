@@ -13,6 +13,7 @@ presentation: >
   Ici, je partage ce que j'apprends en chemin.
 hors_clavier: Guitare et chant (plutôt blues et rock'n'roll), course à pied, football entre amis et pêche.
 email: pierrelequere2@gmail.com
+photo: /assets/img/portrait-cyanotype.jpg
 
 liens:
   - nom: LinkedIn
@@ -110,21 +111,11 @@ certifications:
     image: /assets/img/az-900.png
 
 competences:
-  - PowerShell
-  - Terraform
-  - Azure DevOps
-  - CI/CD
-  - Agilité / Scrum
-  - Teams & Teams Voice
-  - Entra ID
-  - Active Directory
-  - Exchange Online
-  - Exchange On-Premise
-  - Quest / BitTitan
-  - SharePoint
-  - Windows Server
-  - VMware ESXi
-  - Linux & Docker
-  - IIS & Apache
-  - Git
-  - Gestion de projet
+  - groupe: Microsoft 365
+    items: [Exchange Online, Exchange On-Premise, Teams & Teams Voice, Entra ID, Active Directory, SharePoint]
+  - groupe: Automatisation et IaC
+    items: [PowerShell, Terraform, Azure DevOps, CI/CD, Git]
+  - groupe: Infrastructure
+    items: [Windows Server, VMware ESXi, Linux & Docker, IIS & Apache]
+  - groupe: Méthodes et outils
+    items: [Agilité / Scrum, Gestion de projet, Quest, BitTitan]

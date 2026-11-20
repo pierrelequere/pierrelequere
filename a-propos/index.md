@@ -1,7 +1,7 @@
 ---
 layout: page
 title: À propos
-eyebrow: À propos
+feuille: À propos
 intro: Ingénieur Opérations Microsoft 365, PowerShell au quotidien — et guitare le soir.
 ---
 
