@@ -47,6 +47,8 @@
       var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
       root.dataset.theme = dark ? 'light' : 'dark';
       try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+      var frame = document.querySelector('.utterances-frame');
+      if (frame) frame.contentWindow.postMessage({ type: 'set-theme', theme: dark ? 'github-light' : 'github-dark' }, 'https://utteranc.es');
     });
   </script>
 </body>

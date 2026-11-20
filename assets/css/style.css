@@ -142,6 +142,16 @@ pre code { background: none; border: 0; padding: 0; font-size: .86rem; }
 .pager small { display: block; color: var(--muted); font-weight: 400; font-size: .85rem; margin-bottom: .2rem; }
 .pager .next { text-align: right; }
 
+/* Signature et commentaires des articles */
+.signature { display: flex; gap: 1rem; align-items: center; margin-top: 3.5rem; padding: 1.25rem; background: var(--soft); border: 1px solid var(--line); border-radius: 12px; }
+.signature img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.signature p { margin: 0; color: var(--muted); font-size: .97rem; line-height: 1.55; }
+.signature strong { color: var(--text); }
+.comments { margin: 0 0 4rem; }
+.comments .section-title { margin-bottom: .75rem; }
+.comments-note { margin: 0 0 1rem; color: var(--muted); font-size: .95rem; }
+.utterances { max-width: 100%; }
+
 /* ─── Pied de page ─── */
 .footer { border-top: 1px solid var(--line); padding: 2.5rem 0; color: var(--muted); font-size: .9rem; }
 .footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }

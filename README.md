@@ -46,5 +46,10 @@ a-propos/            page À propos
 assets/              CSS et badges
 ```
 
+## Commentaires
+Les commentaires des articles utilisent **utterances** : chaque discussion devient une issue GitHub
+de ce dépôt (libellé `commentaire`). À installer une fois : https://github.com/apps/utterances
+(choisir uniquement ce dépôt). Pour les retirer, supprimer `comments_repo` dans `_config.yml`.
+
 ## Mise en ligne
 Settings → Pages → Source : *Deploy from a branch* → `main` / `(root)`.
