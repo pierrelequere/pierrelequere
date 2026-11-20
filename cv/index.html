@@ -4,10 +4,13 @@ title: Parcours
 ---
 {% assign cv = site.data.cv %}
 
-<header class="page-head">
-  <p class="eyebrow">Parcours</p>
-  <h1>Dix ans dans l'écosystème Microsoft.</h1>
-  <p class="lede">{{ cv.titre }}</p>
+<header class="page-head with-photo">
+  <div>
+    <p class="eyebrow">Parcours</p>
+    <h1>Dix ans dans l'écosystème Microsoft.</h1>
+    <p class="lede">{{ cv.titre }}</p>
+  </div>
+  <img class="photo small" src="{{ cv.photo | relative_url }}" alt="Pierre Le Quere" width="400" height="400">
 </header>
 
 <section>

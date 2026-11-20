@@ -4,13 +4,16 @@ layout: default
 {% assign cv = site.data.cv %}
 
 <section class="hero">
-  <p class="eyebrow">{{ cv.poste_actuel }}</p>
-  <h1>Bonjour, je suis <em>Pierre</em>.</h1>
-  <p class="lede">{{ cv.presentation }}</p>
-  <div class="actions">
-    <a class="btn" href="{{ '/blog/' | relative_url }}">Lire le blog</a>
-    <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Mon parcours</a>
+  <div class="hero-text">
+    <p class="eyebrow">{{ cv.poste_actuel }}</p>
+    <h1>Bonjour, je suis <em>Pierre</em>.</h1>
+    <p class="lede">{{ cv.presentation }}</p>
+    <div class="actions">
+      <a class="btn" href="{{ '/blog/' | relative_url }}">Lire le blog</a>
+      <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Mon parcours</a>
+    </div>
   </div>
+  <img class="photo" src="{{ cv.photo | relative_url }}" alt="Pierre Le Quere" width="400" height="400">
 </section>
 
 <section>

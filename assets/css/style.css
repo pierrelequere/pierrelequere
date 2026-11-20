@@ -57,7 +57,10 @@ section:first-child, .page-head + section { border-top: 0; }
 .more { font-size: .95rem; color: var(--muted); text-decoration: none; }
 
 /* ─── Accueil ─── */
-.hero { padding: 7rem 0 6rem; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4rem; align-items: center; padding: 7rem 0 6rem; }
+.photo { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 6px solid var(--bg); box-shadow: 0 0 0 1px var(--line), 0 20px 50px -20px rgb(0 0 0 / .35); }
+.photo.small { width: 150px; height: 150px; border-width: 4px; }
+.with-photo { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; }
 .hero h1, .page-head h1 { max-width: 860px; font-family: var(--serif); font-weight: 400; font-size: clamp(2.4rem, 6vw, 4.25rem); letter-spacing: -.025em; }
 .hero h1 em { font-style: italic; color: var(--accent); }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.5rem; }
@@ -147,6 +150,9 @@ pre code { background: none; border: 0; padding: 0; font-size: .86rem; }
 
 /* ─── Mobile ─── */
 @media (max-width: 680px) {
+  .hero, .with-photo { grid-template-columns: 1fr; gap: 2rem; }
+  .photo { order: -1; width: 140px; height: 140px; }
+  .with-photo .photo { display: none; }
   body { font-size: 16px; }
   .brand { font-size: 0; gap: 0; }
   .topbar nav { gap: 1.25rem; }
