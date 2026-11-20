@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Architecture Nextcloud et Talk sur VM, deux sites</title>
+  <desc id="d">Les utilisateurs passent par HAProxy puis NGINX vers deux nœuds Nextcloud. Les données sont dans PostgreSQL en primaire/secondaire derrière un endpoint unique, Redis et un stockage partagé. Les flux audio et vidéo vont directement vers un nœud HPB par site.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#52525b"/></marker>
+    <marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7c3aed"/></marker>
+    <style>
+      .box{fill:#fff;stroke:#d4d4d8;stroke-width:1.5}
+      .web{fill:#eff6ff;stroke:#93c5fd}
+      .data{fill:#f0fdf4;stroke:#86efac}
+      .hpb{fill:#f5f3ff;stroke:#c4b5fd}
+      .t{font-size:15px;font-weight:600;fill:#18181b;text-anchor:middle}
+      .s{font-size:12.5px;fill:#52525b;text-anchor:middle}
+      .l{font-size:12px;fill:#71717a}
+      .ln{stroke:#52525b;stroke-width:1.5;fill:none}
+      .md{stroke:#7c3aed;stroke-width:1.8;fill:none;stroke-dasharray:6 5}
+    </style>
+  </defs>
+  <rect width="960" height="600" rx="16" fill="#fafafa"/>
+
+  <!-- utilisateurs -->
+  <rect class="box" x="330" y="22" width="300" height="46" rx="10"/>
+  <text class="t" x="480" y="51">Utilisateurs</text>
+
+  <!-- sites -->
+  <text class="l" x="62" y="104">Site A</text>
+  <text class="l" x="342" y="104">Site B</text>
+
+  <!-- frontaux -->
+  <rect class="box web" x="60" y="112" width="220" height="44" rx="8"/><text class="t" x="170" y="139">HAProxy</text>
+  <rect class="box web" x="340" y="112" width="220" height="44" rx="8"/><text class="t" x="450" y="139">HAProxy</text>
+  <rect class="box web" x="60" y="190" width="220" height="44" rx="8"/><text class="t" x="170" y="217">NGINX</text>
+  <rect class="box web" x="340" y="190" width="220" height="44" rx="8"/><text class="t" x="450" y="217">NGINX</text>
+  <rect class="box web" x="60" y="268" width="220" height="54" rx="8"/><text class="t" x="170" y="291">Nextcloud Web</text><text class="s" x="170" y="310">+ cron (seule instance active)</text>
+  <rect class="box web" x="340" y="268" width="220" height="54" rx="8"/><text class="t" x="450" y="291">Nextcloud Web</text><text class="s" x="450" y="310">cron inactif</text>
+
+  <path class="ln" d="M400 68 L170 110" marker-end="url(#a)"/>
+  <path class="ln" d="M470 68 L450 110" marker-end="url(#a)"/>
+  <text class="l" x="232" y="86">HTTPS 443</text>
+  <path class="ln" d="M170 156 V188" marker-end="url(#a)"/>
+  <path class="ln" d="M450 156 V188" marker-end="url(#a)"/>
+  <path class="ln" d="M270 156 L350 188" marker-end="url(#a)"/>
+  <path class="ln" d="M350 156 L270 188" marker-end="url(#a)"/>
+  <path class="ln" d="M170 234 V266" marker-end="url(#a)"/>
+  <path class="ln" d="M450 234 V266" marker-end="url(#a)"/>
+
+  <!-- données -->
+  <rect x="40" y="352" width="560" height="146" rx="12" fill="none" stroke="#d4d4d8" stroke-dasharray="4 4"/>
+  <text class="l" x="56" y="372">Couche données (réseau privé uniquement)</text>
+  <rect class="box data" x="56" y="384" width="300" height="30" rx="6"/><text class="s" x="206" y="404" style="font-weight:600;fill:#166534">endpoint DB unique (nom DNS logique)</text>
+  <rect class="box data" x="56" y="428" width="140" height="54" rx="8"/><text class="t" x="126" y="451">PostgreSQL</text><text class="s" x="126" y="470">primaire, site A</text>
+  <rect class="box data" x="216" y="428" width="140" height="54" rx="8"/><text class="t" x="286" y="451">PostgreSQL</text><text class="s" x="286" y="470">secondaire, site B</text>
+  <path class="ln" d="M196 455 H214" marker-end="url(#a)"/>
+  <rect class="box data" x="372" y="384" width="98" height="98" rx="8"/><text class="t" x="421" y="428">Redis</text><text class="s" x="421" y="447">cache, verrous</text>
+  <rect class="box data" x="482" y="384" width="104" height="98" rx="8"/><text class="t" x="534" y="428">Stockage</text><text class="s" x="534" y="447">partagé</text>
+  <path class="ln" d="M240 322 V350" marker-end="url(#a)"/>
+  <path class="ln" d="M380 322 V350" marker-end="url(#a)"/>
+
+  <!-- HPB -->
+  <rect class="box hpb" x="672" y="112" width="250" height="128" rx="10"/>
+  <text class="t" x="797" y="140">HPB Talk, site A</text>
+  <text class="s" x="797" y="166">Signaling · NATS</text>
+  <text class="s" x="797" y="186">Janus (SFU) · coturn</text>
+  <text class="l" x="797" y="214" text-anchor="middle">services système sur la même VM</text>
+  <rect class="box hpb" x="672" y="268" width="250" height="128" rx="10"/>
+  <text class="t" x="797" y="296">HPB Talk, site B</text>
+  <text class="s" x="797" y="322">Signaling · NATS</text>
+  <text class="s" x="797" y="342">Janus (SFU) · coturn</text>
+  <text class="l" x="797" y="370" text-anchor="middle">services système sur la même VM</text>
+
+  <path class="md" d="M630 45 C 760 45, 797 70, 797 110" marker-end="url(#m)"/>
+  <text class="l" x="690" y="36" style="fill:#7c3aed">audio / vidéo : TURN + UDP</text>
+  <path class="ln" d="M560 212 L670 190" marker-end="url(#a)"/>
+  <text class="l" x="580" y="186">WebSocket</text>
+  <path class="ln" d="M560 300 L670 320" marker-end="url(#a)"/>
+  <text class="l" x="578" y="330">API Talk</text>
+
+  <!-- ansible -->
+  <rect class="box" x="40" y="524" width="882" height="50" rx="10"/>
+  <text class="t" x="481" y="555" style="font-weight:500">Un nœud Ansible déploie et configure toutes les VM (SSH), depuis la zone d'administration</text>
+</svg>
