@@ -1,54 +1,40 @@
 ---
 layout: default
-feuille: Accueil
 ---
 {% assign cv = site.data.cv %}
 
 <section class="hero">
-  <div class="hero-texte">
-    <h1 class="nom"><span>Pierre</span> <span>Le Quere</span></h1>
-    <p class="role">{{ cv.poste_actuel }}</p>
-    <p class="intro">{{ cv.presentation }}</p>
-    <div class="actions">
-      <a class="btn" href="{{ '/blog/' | relative_url }}">Lire le blog</a>
-      <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Voir mon parcours</a>
-    </div>
+  <p class="eyebrow">{{ cv.poste_actuel }}</p>
+  <h1>Bonjour, je suis <em>Pierre</em>.</h1>
+  <p class="lede">{{ cv.presentation }}</p>
+  <div class="actions">
+    <a class="btn" href="{{ '/blog/' | relative_url }}">Lire le blog</a>
+    <a class="btn ghost" href="{{ '/cv/' | relative_url }}">Mon parcours</a>
   </div>
-
-  <figure class="portrait">
-    <div class="tirage">
-      <img src="{{ cv.photo | relative_url }}" alt="Portrait de Pierre Le Quere, en tirage bleu" width="500" height="600">
-    </div>
-    <span class="cote cote-h" aria-hidden="true"><span>500 px</span></span>
-    <span class="cote cote-v" aria-hidden="true"><span>600 px</span></span>
-    <figcaption>Fig. 1, l'auteur en tirage cyanotype.</figcaption>
-  </figure>
 </section>
 
-<section class="bloc">
-  <h2>Au quotidien</h2>
-  <ul class="legende">
+<section>
+  <h2 class="section-title">Au quotidien</h2>
+  <div class="grid four">
     {% for x in cv.quotidien %}
-    <li>
+    <div class="tile">
       {% include icon.html tag=x.tag %}
-      <div>
-        <h3>{{ x.titre }}</h3>
-        <p>{{ x.texte }}</p>
-      </div>
-    </li>
+      <h3>{{ x.titre }}</h3>
+      <p>{{ x.texte }}</p>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
 </section>
 
-<section class="bloc">
-  <div class="bloc-tete">
-    <h2>Derniers articles</h2>
-    <a href="{{ '/blog/' | relative_url }}">Tous les articles</a>
+<section>
+  <div class="section-row">
+    <h2 class="section-title">Derniers articles</h2>
+    <a class="more" href="{{ '/blog/' | relative_url }}">Tout le blog →</a>
   </div>
   {% include post-list.html posts=site.posts limit=3 %}
 </section>
 
-<section class="bloc hors">
-  <h2>En dehors du clavier</h2>
+<section class="aside">
+  <h2 class="section-title">En dehors du clavier</h2>
   <p>{{ cv.hors_clavier }}</p>
 </section>

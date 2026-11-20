@@ -1,15 +1,15 @@
-<ol class="nomenclature" reversed>
+<ul class="post-list">
   {% for post in include.posts limit: include.limit %}
   {% assign first_tag = post.tags | first %}
   <li>
     <a href="{{ post.url | relative_url }}">
-      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%d/%m/%Y" }}</time>
-      <span class="sujet">{% include icon.html tag=first_tag size="sm" %}{{ first_tag }}</span>
-      <span class="corps">
+      <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+      {% include icon.html tag=first_tag %}
+      <span class="body">
         <span class="t">{{ post.title }}</span>
         <span class="d">{{ post.description | default: post.excerpt | strip_html | truncate: 150 }}</span>
       </span>
     </a>
   </li>
   {% endfor %}
-</ol>
+</ul>

@@ -19,8 +19,5 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Commentaires des articles (utterances : stockés dans les issues GitHub de ce dépôt)
-comments_repo: pierrelequere/pierrelequere
-
 exclude:
   - README.md
