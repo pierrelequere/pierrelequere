@@ -75,7 +75,7 @@
   <path class="ln" d="M560 300 L670 320" marker-end="url(#a)"/>
   <text class="l" x="578" y="330">API Talk</text>
 
-  <!-- ansible -->
+  <!-- déploiement -->
   <rect class="box" x="40" y="524" width="882" height="50" rx="10"/>
-  <text class="t" x="481" y="555" style="font-weight:500">Un nœud Ansible déploie et configure toutes les VM (SSH), depuis la zone d'administration</text>
+  <text class="t" x="481" y="555" style="font-weight:500">Un dépôt Git (flake Nix) décrit chaque VM : nixos-rebuild l'applique, et un retour arrière reste à une commande</text>
 </svg>
